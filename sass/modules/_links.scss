@@ -1,0 +1,11 @@
+//Link Styling---------------------------------------------
+
+a {
+	@include inline-block();
+	@include animate-link($link-color, $bitter, $midlargeSize);
+
+	@include breakpoint($sassySmall){
+	@include rem("font-size", $regularSize);
+	}
+
+}
