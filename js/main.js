@@ -1,3 +1,55 @@
+var subtractTime = $(".subtract-time");
+var addTime = $(".add-time");
+
+subtractTime.on("click",changeSessionValues);
+addTime.on("click",changeSessionValues);
+
+function changeSessionValues(event){
+	var target = $(event.target);
+	var timerNumber;
+	if (target.is(subtractTime)){
+		target.next().html(function(index,oldhtml){
+			if(parseInt(oldhtml) === 1){
+				return oldhtml;
+			}
+			timerNumber = parseInt(oldhtml) - 1 ;
+			return timerNumber;
+		});
+	}
+
+	if (target.is(addTime)){
+		target.prev().html(function(index,oldhtml){
+			timerNumber = parseInt(oldhtml) + 1 ;
+			return timerNumber ;
+		});
+	}
+	if (target.parents().is("#work-container")){
+		$("#timer-clock").html(timerNumber);
+	}	
+}
+
+
+function pauseCountDown(event){
+	var target = $(event.target);
+	clearInterval(loopingTimer);
+	target.removeClass("pause");
+	target.addClass("start");
+	engageButton.on("click",startCountDown);
+
+}
+var resetButton = $("#resetButton");
+
+resetButton.on("click",resetTimer);
+
+function resetTimer(){
+	clearInterval(loopingTimer);
+	$("#timer-clock").html(function(index,oldhtml){
+		return $("#work-time").html();
+	});
+	subtractTime.on("click",changeSessionValues);
+	addTime.on("click",changeSessionValues);
+	engageButton.on("click",startCountDown);
+}
 var engageButton= $("#engage-button");
 var timerBell = document.getElementById("timer-bell");
 timerBell.volume = 0.5;
