@@ -26,7 +26,7 @@ gulp.task('scripts', function(){
 		.pipe(jshint.reporter('default'))
 		.pipe(concat('main.js'))
 		.pipe(gulp.dest('js/'))
-		.pipe(rename({suffix:'min'}))
+		.pipe(rename({suffix:'.min'}))
 		.pipe(uglify())
 		.pipe(gulp.dest("js/"))
 })
@@ -37,5 +37,5 @@ gulp.task("default",function(){
 
 	livereload.listen();
 
-	gulp.watch(["sass/**/*.scss","./index.html"]).on("change",livereload.changed);
+	gulp.watch(["sass/**/*.scss","./index.html","test-js/**/*.js"]).on("change",livereload.changed);
 })
