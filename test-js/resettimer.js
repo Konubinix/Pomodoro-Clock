@@ -1,3 +1,4 @@
+
 var resetButton = $("#resetButton");
 
 resetButton.on("click",resetTimer);
@@ -9,6 +10,6 @@ function resetTimer(){
 	});
 	subtractTime.on("click",changeSessionValues);
 	addTime.on("click",changeSessionValues);
-	startButton.on("click",startCountDown);
-
+	engageButton.on("click",startCountDown);
 }
+

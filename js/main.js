@@ -28,6 +28,16 @@ function changeSessionValues(event){
 	}	
 }
 
+
+function pauseCountDown(event){
+	var target = $(event.target);
+	clearInterval(loopingTimer);
+	target.removeClass("pause");
+	target.addClass("start");
+	engageButton.on("click",startCountDown);
+
+}
+
 var resetButton = $("#resetButton");
 
 resetButton.on("click",resetTimer);
@@ -39,21 +49,26 @@ function resetTimer(){
 	});
 	subtractTime.on("click",changeSessionValues);
 	addTime.on("click",changeSessionValues);
-	startButton.on("click",startCountDown);
-
+	engageButton.on("click",startCountDown);
 }
-var startButton= $("#engage-button");
+
+
+
+var engageButton= $("#engage-button");
+var timerBell = document.getElementById("timer-bell");
+timerBell.volume = 0.5;
 var loopingTimer;
-startButton.on("click",startCountDown);
+engageButton.on("click",startCountDown);
 
 function startCountDown(event){
 	var target = $(event.target);
-	$("#engage-button").off();
+	engageButton.off();
 	subtractTime.off();
 	addTime.off();
 	target.removeClass("start");
 	target.addClass("pause");
-
+	engageButton.on("click",pauseCountDown);
+	
 	var workDuration = $("#work-time");
 	var breakDuration = $("#break-time");
 	$("#timer-title").html("Time to Focus!");
@@ -76,15 +91,20 @@ function timerChange(workTime,breakTime){
     	var secs = timerClock.html().split(":")[1];
 
     	if(timerClock.html() === "0:00"){
-    		if(lastTime == initialWorkTime){
+    		if($("#timer-title").html() === "Time to Focus!"){
     			$("#timer-title").html("Break Time");
     			timerClock.html(initialBreakTime);
     			lastTime = initialBreakTime;
+    			timerBell.src = "breakbell.mp3";
+    			timerBell.play();
     			return;
     		}
     		$("#timer-title").html("Time to Focus!");
     		timerClock.html(initialWorkTime);
     		lastTime = initialWorkTime;
+    		timerBell.src = "workbell.mp3";
+    		timerBell.play();
+
     		return;
     	}
 
@@ -94,7 +114,7 @@ function timerChange(workTime,breakTime){
 			});
 		}
 
-		if(secs !=="00"){
+		if(secs !== "00"){
 			timerClock.html(function(index,oldhtml){
 				var seconds = parseInt(secs) -1;
 				if (seconds < 10){
@@ -108,3 +128,4 @@ function timerChange(workTime,breakTime){
 	},1000);
 
 }
+
