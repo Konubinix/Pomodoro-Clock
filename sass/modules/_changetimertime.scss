@@ -1,0 +1,14 @@
+
+
+.breaks-container{
+	padding-top:5%;
+	cursor:pointer;
+}
+
+.break-container,.work-container {
+	@include rem('font-size',28);
+}
+
+.subtract-time,.add-time{
+	padding: 2px 5px;
+}
