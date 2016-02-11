@@ -108,8 +108,8 @@ function timerChange(workTime,breakTime){
 	//sets the audio tag volume
 	timerBell.volume = 0.5;
 	//variables which contain pixels/second metric which is the number the timer filler needs to progress per each second
-	var workLoadInterval = 395 / (parseInt(initialWorkTime) * 60);
-    var breakLoadInterval = 395 / (parseInt(initialBreakTime) * 60);
+	var workLoadInterval = 410 / (parseInt(initialWorkTime) * 60);
+    var breakLoadInterval = 410 / (parseInt(initialBreakTime) * 60);
 
     //condition changes the timer-clock html to the initial worktime
 	if(workTime.html() === timerClock.html() ){

@@ -300,7 +300,7 @@ body {
   text-shadow: 3px 2px 1px #000; }
 
 .breaks-container {
-  padding-top: 5%;
+  padding-top: 3%;
   cursor: pointer; }
 
 .break-container, .work-container {
@@ -352,7 +352,7 @@ header {
 
 .timer-filler {
   position: absolute;
-  height: 110%;
+  height: 120%;
   width: 100%;
   top: 100%;
   z-index: -100;
