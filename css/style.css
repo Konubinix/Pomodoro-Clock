@@ -336,7 +336,7 @@ header {
   .timer-container {
     -webkit-transform: scale(0.7);
             transform: scale(0.7);
-    margin: 0 -4%; } }
+    margin: 0 -3%; } }
 
 .timer-inner-circle {
   position: relative;
