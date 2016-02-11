@@ -13,4 +13,4 @@ The goal of this project is to build a fully-functional pomodoro clock which wou
 **Features**
 - A javascript enabled animation which moves a div across the circle as the timer countsdown.
 - Plus and minus buttons which allows the user to set the break and work session duration
--Audio tags which chime when each session ends
+- Audio tags which chime when each session ends
