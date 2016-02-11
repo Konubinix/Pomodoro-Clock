@@ -262,6 +262,14 @@ footer {
 i {
   padding-right: 7px; }
 
+@media screen and (max-height: 600px) {
+  footer {
+    position: relative; } }
+
+@media only screen and (max-width: 600px) {
+  footer {
+    position: relative; } }
+
 a {
   display: -moz-inline-stack;
   display: inline-block;
@@ -302,6 +310,12 @@ body {
 .subtract-time, .add-time {
   padding: 2px 5px; }
 
+@media only screen and (max-width: 600px) {
+  .break-container, .work-container {
+    display: block;
+    margin: 0 auto;
+    border-top: black solid 1px; } }
+
 header {
   padding-top: 60px; }
 
@@ -320,6 +334,11 @@ header {
   transition: all 0.5s ease-in 0s; }
   .timer-container:hover {
     box-shadow: 0px 0px 3px 5px #0BFF2B; }
+
+@media only screen and (max-width: 600px) {
+  .timer-container {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7); } }
 
 .timer-inner-circle {
   position: relative;

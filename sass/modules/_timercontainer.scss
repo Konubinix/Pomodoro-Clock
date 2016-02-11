@@ -13,6 +13,13 @@
 
 }
 
+@include breakpoint($sassySmall){
+	.timer-container{
+		transform: scale(0.70);
+	}
+}
+
+
 .timer-inner-circle{
 	@include relative();
 	overflow:hidden;

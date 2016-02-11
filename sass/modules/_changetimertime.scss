@@ -12,3 +12,11 @@
 .subtract-time,.add-time{
 	padding: 2px 5px;
 }
+
+@include breakpoint($sassySmall){
+	.break-container, .work-container{
+		display:block;
+		margin: 0 auto;
+		border-top: black solid 1px;
+	}
+}
