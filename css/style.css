@@ -322,12 +322,9 @@ header {
 .timer-container {
   height: 400px;
   width: 400px;
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: top;
-  zoom: 1;
-  *display: inline;
   padding: 3px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 250px;
   border: 2px solid #0BFF2B;
   -webkit-transition: all 0.5s ease-in 0s;
@@ -338,7 +335,8 @@ header {
 @media only screen and (max-width: 600px) {
   .timer-container {
     -webkit-transform: scale(0.7);
-            transform: scale(0.7); } }
+            transform: scale(0.7);
+    margin: 0 -4%; } }
 
 .timer-inner-circle {
   position: relative;
@@ -352,7 +350,7 @@ header {
 
 .timer-filler {
   position: absolute;
-  height: 120%;
+  height: 110%;
   width: 100%;
   top: 100%;
   z-index: -100;
